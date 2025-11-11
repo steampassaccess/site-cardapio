@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍔 Luary Cardápio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body class="login-body">
+  <!-- Mensagem para dispositivos móveis -->
+  <div class="mobile-message" id="mobileMessage">
+    <div class="mobile-message-content">
+      <div class="mobile-icon">💻</div>
+      <h2>Acesso Restrito</h2>
+      <p>Esta página só pode ser acessada por computadores.</p>
+      <p>Por favor, use um desktop ou laptop para continuar.</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo normal do login (visível apenas em desktop) -->
+  <div class="login-container" id="loginContainer">
+    <div class="login-card">
+      <div class="logo-area">
+        <div class="icon-container">
+          <!-- Ícones serão inseridos via JavaScript -->
+        </div>
+        <h1>LUARY CARDÁPIOS</h1>
+      </div>
+
+      <p class="subtitle">Faça login para gerenciar seu sistema digital</p>
+
+      <div class="input-group">
+        <label for="email">📧 E-mail</label>
+        <input type="email" id="email" placeholder="exemplo@email.com">
+      </div>
+
+      <div class="input-group">
+        <label for="password">🔒 Senha</label>
+        <input type="password" id="password" placeholder="Digite sua senha">
+      </div>
+
+      <div class="user-type-selector">
+        <label class="radio-label">
+          <input type="radio" name="userType" value="lojista" checked>
+          <span class="radio-custom"></span>
+          Lojista
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="userType" value="admin">
+          <span class="radio-custom"></span>
+          Administrador 
+        </label>
+      </div>
+
+      <button id="loginBtn" class="login-button">
+        <span class="button-text">ENTRAR</span>
+        <div class="button-loader"></div>
+      </button>
+      <p class="msg-erro" id="msgErro"></p>
+
+      <footer class="login-footer">
+        <p>Feito com ❤️ para negócios digitais</p>
+      </footer>
+    </div>
+  </div>
+  
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
